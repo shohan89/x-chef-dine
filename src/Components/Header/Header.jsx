@@ -1,9 +1,9 @@
 const Header = () => {
     return (
         <div className="container mx-auto flex justify-between items-center pt-4 pb-4">
-            <div><h2>X Chef Dine</h2></div>
+            <div><h2 className='text-4xl font-bold'>X Chef Dine</h2></div>
             <div>
-                <ul className="inline-flex space-x-4">
+                <ul className="inline-flex space-x-12">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Recipes</a></li>
                     <li><a href="#">About</a></li>
