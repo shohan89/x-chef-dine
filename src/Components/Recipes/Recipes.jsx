@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Recipe from "../Recipe/Recipe";
 
 const Recipes = () => {
     const [recipies, setRecipes] = useState([]);
@@ -14,7 +15,13 @@ const Recipes = () => {
     },[]);
     return (
         <div className="w-3/4">
-            <h2>This is recipes: {recipies.length}</h2>
+            <h2 className="text-2xl font-bold">This is recipes: {recipies.length}</h2>
+            {
+                recipies.map(recipe => <Recipe 
+                    key={recipe.recipe_id}
+                    recipe={recipe}
+                     />)
+            }
         </div>
     );
 };
