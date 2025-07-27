@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
 
-const Recipes = () => {
+const Recipes = ({handleWantToCook}) => {
     const [recipies, setRecipes] = useState([]);
     // Fetch recipes from an API or define them here
     useEffect(()=> {
@@ -20,6 +20,7 @@ const Recipes = () => {
                 recipies.map(recipe => <Recipe 
                     key={recipe.recipe_id}
                     recipe={recipe}
+                    handleWantToCook={handleWantToCook}
                      />)
             }
         </div>
