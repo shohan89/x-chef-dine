@@ -16,7 +16,7 @@ function App() {
     <>
       <Header />
       <Hero />
-      <div className="container mx-auto flex space-x-4 mt-12">
+      <div className="container mx-auto flex space-x-4 mt-12 mb-12">
         <Recipes handleWantToCook={handleWantToCook} />
         <Sidebar wantToCook={wantToCook} />
       </div>

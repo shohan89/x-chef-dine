@@ -14,15 +14,17 @@ const Recipes = ({handleWantToCook}) => {
         }
     },[]);
     return (
-        <div className="w-3/4">
+        <div className="w-3/4 ">
             <h2 className="text-2xl font-bold">This is recipes: {recipies.length}</h2>
-            {
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                {
                 recipies.map(recipe => <Recipe 
                     key={recipe.recipe_id}
                     recipe={recipe}
                     handleWantToCook={handleWantToCook}
                      />)
             }
+            </div>
         </div>
     );
 };
