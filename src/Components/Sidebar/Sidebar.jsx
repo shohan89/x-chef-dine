@@ -1,6 +1,5 @@
 
-const Sidebar = ({ wantToCook, handlePrepare, prepare }) => {
-    console.log("🚀 ~ Sidebar ~ prepare:", prepare)
+const Sidebar = ({ wantToCook, handlePrepare, prepare, totalTime, totalCalories }) => {
     
     return (
         <div className="w-2/4 p-8 rounded-2xl border border-gray-300 bg-white shadow-md">
@@ -55,6 +54,10 @@ const Sidebar = ({ wantToCook, handlePrepare, prepare }) => {
                     }
                 </tbody>
             </table>
+            <div className="mt-6 flex justify-between items-center">
+                <h2 className="text-center text-2xl font-semibold mt-6">Total Time: {totalTime} minutes</h2>
+                <h2 className="text-center text-2xl font-semibold">Total Calories: {totalCalories} calories</h2>
+            </div>
             </div>
         </div>
     );
