@@ -17,7 +17,7 @@ const Recipe = ({ recipe, handleWantToCook }) => {
                     ingredients.map((ingredient, index) => (
                         <div className="pl-6" key={index}>
                                 <ul>
-                                    <li key={index} className="text-gray-700">{index +1}. {ingredient}</li>
+                                    <li key={index} className="text-gray-700 list-disc">{ingredient}</li>
                                 </ul>
                         </div>
                     ))
