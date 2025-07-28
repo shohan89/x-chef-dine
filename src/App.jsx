@@ -14,10 +14,13 @@ function App() {
   }
 
   const handlePrepare = recipeId => {
+    // Find the recipe in the wantToCook list
     const recipeToPrepare = wantToCook.find(recipe => recipe.recipe_id === recipeId);
-    console.log("🚀 ~ handlePrepare ~ recipeToPrepare:", recipeToPrepare)
+    // If the recipe is found, move it to the prepare list
     if (recipeToPrepare) {
+      // Add the recipe to the prepare list
       setPrepare(prevPrepare => [...prevPrepare, recipeToPrepare]);
+      // Remove the recipe from the wantToCook list
       setWantToCook(prevWantToCook => prevWantToCook.filter(recipe => recipe.recipe_id !== recipeId));
     }
   }
