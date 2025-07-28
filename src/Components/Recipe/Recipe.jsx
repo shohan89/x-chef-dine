@@ -3,7 +3,6 @@ import { IoTimeOutline } from "react-icons/io5";
 
 const Recipe = ({ recipe, handleWantToCook }) => {
     const { recipe_name, image, description, preparing_time, calories, ingredients } = recipe;
-    console.log("🚀 ~ Recipe ~ ingredients:", ingredients)
     
     return (
         <div className="border border-gray-300 p-6 rounded-3xl shadow-md mb-4">

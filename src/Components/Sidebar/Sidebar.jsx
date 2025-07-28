@@ -1,5 +1,6 @@
 
-const Sidebar = ({ wantToCook }) => {
+const Sidebar = ({ wantToCook, handlePrepare, prepare }) => {
+    console.log("🚀 ~ Sidebar ~ prepare:", prepare)
     
     return (
         <div className="w-2/4 p-8 rounded-2xl border border-gray-300 bg-white shadow-md">
@@ -23,39 +24,35 @@ const Sidebar = ({ wantToCook }) => {
                             <td>{recipe.recipe_name}</td>
                             <td>{recipe.preparing_time}</td>
                             <td>{recipe.calories}</td>
-                            <td><button className="btn bg-[#0BE58A] font-medium text-black px-5 py-2.5 rounded-full cursor-pointer">Prepare</button></td>
+                            <td><button onClick={()=> handlePrepare(recipe.recipe_id)} className="btn bg-[#0BE58A] font-medium text-black px-5 py-2.5 rounded-full cursor-pointer">Prepare</button></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
             </div>
             <div>
-                <h2 className="text-center text-2xl font-semibold mb-4">Currently cooking: 02</h2>
+                <h2 className="text-center text-2xl font-semibold mb-4">Currently cooking: {prepare.length}</h2>
             <hr className="mb-6 border-[#282828]" />
             <table className="table-fixed w-full text-left">
                 <thead>
                     <tr>
-                    <th>Name</th>
-                    <th>Time</th>
-                    <th>Calories</th>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th>Calories</th>
                     </tr>
                 </thead>
                 <tbody className="text-left">
-                    <tr>
-                    <td>The Sliding</td>
-                    <td>Malcolm Lockyer</td>
-                    <td>1961</td>
-                    </tr>
-                    <tr>
-                    <td>Witchy Woman</td>
-                    <td>The Eagles</td>
-                    <td>1972</td>
-                    </tr>
-                    <tr>
-                    <td>Shining Star</td>
-                    <td>Earth, Wind, and Fire</td>
-                    <td>1975</td>
-                    </tr>
+                    {
+                        prepare.map((recipe, index) => (
+                            <tr key={index}>
+                                <td>{index + 1}</td>
+                                <td>{recipe.recipe_name}</td>
+                                <td>{recipe.preparing_time}</td>
+                                <td>{recipe.calories}</td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
             </div>
