@@ -30,10 +30,10 @@ function App() {
       // Remove the recipe from the wantToCook list
       setWantToCook(prevWantToCook => prevWantToCook.filter(recipe => recipe.recipe_id !== recipeId));
       // Calculate total time and calories for the next prepare list
-    const totalTime = nextPrepare.reduce((total, recipe) => total + parseInt(recipe.preparing_time), 0);
-    const totalCalories = nextPrepare.reduce((total, recipe) => total + parseInt(recipe.calories), 0);
-    setTotalTime(totalTime);
-    setTotalCalories(totalCalories);
+      const totalTime = nextPrepare.reduce((total, recipe) => total + parseInt(recipe.preparing_time), 0);
+      const totalCalories = nextPrepare.reduce((total, recipe) => total + parseInt(recipe.calories), 0);
+      setTotalTime(totalTime);
+      setTotalCalories(totalCalories);
     }
   }
 
